@@ -1,4 +1,4 @@
-# internet-pedal
+# wifi-pedal
 
 turns your wifi off unless you hold down a pedal
 
@@ -18,7 +18,7 @@ to not fry your wifi card, this makes sure not to switch the chip more than once
 
 if an MPD24 is not plugged in when the daemon starts, wifi will be off
 
-- **TODO** use `manageWifi.isOn()` to keep wifi in desired state
+- **TODO** prevent hack where you turn wifi on in system daemon (can use `manageWifi.isOn()`)
 
 - **TODO** prevent hack where you unplug MPD while pedal depressed to keep wifi on
 
