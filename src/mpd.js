@@ -9,20 +9,28 @@
 const midi = require('midi')
 const kefir = require('kefir')
 
-// Set up a new input.
-const input = new midi.input()
-// Count the available input ports.
-const ports = input.getPortCount()
-
-// Get the name of a specified input port.
-const name = input.getPortName(0)
-
 const inputS = kefir.stream(emitter => {
-  input.on('message', (deltaTime, message) => emitter.emit(message))
-  input.on('error', err => emitter.error(err))
-})
 
-// Open the first available input port.
-input.openPort(0);
+  // Set up a new input.
+  let input = new midi.input()
+  // Count the available input ports.
+  let ports = input.getPortCount()
+
+  // Get the name of a specified input port.
+  let name = input.getPortName(0)
+  if (name === 'Akai MPD24') {
+    console.log('connected to MPD24')
+    input.on('message', (deltaTime, message) =>
+             emitter.emit(message))
+    input.on('error', err =>
+             emitter.error(err))
+    input.openPort(0)
+  } else {
+    // if there is no AKAI MPD24 plugged in,
+    // emit an error
+    console.log("No MPD24 found!")
+    emitter.emit('No MPD')
+  }
+})
 
 module.exports = inputS

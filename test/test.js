@@ -13,6 +13,7 @@ function on () {
   return manageWifi.on()
 }
 
+// set up keybindings
 lowerLeftS
   .throttle(1000) // one reading per second, don't want to fry my wifi card
   .flatMap(state => {
@@ -23,6 +24,5 @@ lowerLeftS
     return off()
   })
   .log()
-
 
 off()
