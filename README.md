@@ -1,6 +1,6 @@
 # wifi-pedal
 
-turns your wifi off unless you hold down a pedal
+turns your wifi off unless you hold down a foot pedal
 
 currently uses the lower-left pad of an akai mpd 24
 
