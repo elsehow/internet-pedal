@@ -2,7 +2,7 @@
 
 turns your wifi off unless you hold down a foot pedal
 
-currently uses the lower-left pad of an akai mpd 24
+currently uses the drum pads (any of them) of an akai mpd 24
 
 ## use
 
